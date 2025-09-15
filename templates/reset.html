@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="min-height:80vh;">
+  <div class="glass-card col-md-4">
+    <h3 class="text-center mb-3">Reset Password</h3>
+    <form method="POST">
+      <div class="mb-3">
+        <input type="password" class="form-control" name="password" placeholder="New Password" required>
+        <small class="text-white-50">Min 6 chars, include a number & special char.</small>
+      </div>
+      <button type="submit" class="btn btn-primary w-100 mb-3">Reset Password</button>
+    </form>
+    <div class="text-center mt-2">
+      <a href="{{ url_for('login') }}">Back to Login</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

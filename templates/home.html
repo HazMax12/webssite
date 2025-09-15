@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="particles-js" style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1;"></div>
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <div class="glass-card text-center p-5" style="max-width: 500px; width: 90%;">
+    <h1 class="mb-3">Welcome, {{ username }}!</h1>
+    <p class="mb-4">Your account is linked with Discord. Enjoy your secure session.</p>
+
+    <a href="{{ url_for('logout') }}" class="btn btn-danger btn-lg">Logout</a>
+  </div>
+</div>
+
+<!-- Animated particles -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+    "color": { "value": "#ffffff" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.3 },
+    "size": { "value": 3 },
+    "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.2, "width": 1 },
+    "move": { "enable": true, "speed": 3, "direction": "none", "random": false, "straight": false, "out_mode": "out" }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": { "enable": true, "mode": "repulse" },
+      "onclick": { "enable": true, "mode": "push" },
+      "resize": true
+    }
+  },
+  "retina_detect": true
+});
+</script>
+{% endblock %}
